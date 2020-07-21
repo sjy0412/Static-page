@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>learn03</title>
+		<style type="text/css">
+			body{
+				font-family: "helvetica","Arial" serif;
+				color: lightgreen;
+				background-color: azure;
+				margin: 1em 10%;
+			}
+			h2{
+				text-align: center;
+			}
+			#images{
+				text-align: center;	
+			}
+			p{
+				font-weight: bold;
+				color: skyblue;
+				text-align: center;
+			}
+			#big {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>四小只呀</h2>
+		<div id="images">
+			<a href="../img/chen.jpg" title="陈同学">
+				<img src="../img/chensmall.jpg" alt="山西陈">
+				</a>
+			<a href="../img/li.jpg" title="李同学">
+				<img src="../img/lismall.jpg" alt="青岛李">
+				</a>
+			<a href="../img/shen.jpg" title="申同学">
+				<img src="../img/shensmall.jpg" alt="广西申">
+				</a>
+			<a href="../img/song.jpg" title="宋同学">
+				<img src="../img/songsmall.jpg" alt="山东宋">
+				</a>
+		</div>
+		<div style="clear: both"></div>
+		<div id="big">
+			<img  id="bigimg" src="img/placehold.png" alt="" width="500px" >
+		</div>
+		<p id="des">选择一张图片</p>
+		
+		
+		<script type="text/javascript">
+			// 1 获取所有的a标签
+			var images = document.getElementById('images');
+			var links = images.getElementsByTagName('a');
+			// 2 给所有的a标签注册事件
+			for (var i = 0; i < links.length; i++) {
+				// 所有a标签对应的元素
+				var link = links[i];
+				// 注册事件
+				link.onclick = function () {
+					// 4 切换图片
+					// 获取占位大的bigimg标签
+					var bigimg = document.getElementById('bigimg');
+					bigimg.src = this.href;
+					
+					// 5 设置p标签的内容
+					var des = document.getElementById('des');
+					des.innerHTML = this.title;
+					// 3 取消a的默认行为
+					return false;
+				}
+					
+			}
+		</script>
+	</body>
+</html>
