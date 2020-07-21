@@ -49,9 +49,8 @@ git pull shh地址 master 用ssh方式上传
 
 ##在push和pull操作时,先pull再push
 
-git remote add origin ssh地址
-git push origin master 
-git push origin -u master
+git remote add origin ssh的地址 如:git remote add origin git@github.com:sjy0412/shen-notes.git
+git push -u origin master
 git push
 当我们在push时,加上-u参数,那么下一次push时只需要写上git push就能上传代码
 
